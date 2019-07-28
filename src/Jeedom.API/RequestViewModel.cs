@@ -34,7 +34,7 @@ namespace Jeedom.API
         public CancellationTokenSource tokenSource;
         private static volatile RequestViewModel _instance;
         private static object threadLock = new object();
-        private ObservableCollection<Command> _commandList = new ObservableCollection<Command>();
+        private ObservableCollection<Model.Command> _commandList = new ObservableCollection<Model.Command>();
         private double _dateTime;
         private ObservableCollection<EqLogic> _eqLogicList = new ObservableCollection<EqLogic>();
         private ObservableCollection<JdItem> _favoriteList = new ObservableCollection<JdItem>();
@@ -42,7 +42,7 @@ namespace Jeedom.API
         private ObservableCollection<Interact> _interactList = new ObservableCollection<Interact>();
         private string _loadingMessage;
         private ObservableCollection<Message> _messageList = new ObservableCollection<Message>();
-        private ObservableCollection<JdObject> _objectList = new ObservableCollection<JdObject>();
+        private ObservableCollection<JeedomObject> _objectList = new ObservableCollection<JeedomObject>();
         private int _progress = 0;
         private RelayCommand<object> _RefreshCommand;
         private ObservableCollection<Scene> _sceneList = new ObservableCollection<Scene>();
@@ -50,7 +50,7 @@ namespace Jeedom.API
         private string _version;
         private int pass = 0;
 
-		public ObservableCollection<Command> CommandList
+		public ObservableCollection<Model.Command> CommandList
 		{
 			get { return _commandList; }
 			set
@@ -114,7 +114,7 @@ namespace Jeedom.API
 			}
 		}
 
-		public ObservableCollection<JdObject> ObjectList
+		public ObservableCollection<JeedomObject> ObjectList
 		{
 			get { return _objectList; }
 			set
@@ -207,7 +207,7 @@ namespace Jeedom.API
 			}
 		}
 
-		public void AddToFavorite(EqLogic eq)
+		public void AddToFavorite(Model.EqLogic eq)
 		{
 			if (!FavoriteList.Contains(eq))
 			{
@@ -366,12 +366,12 @@ namespace Jeedom.API
 		{
 			var jsonrpc = new JsonRpcClient();
 
-			if (await jsonrpc.SendRequest("object::all"))
+			if (await jsonrpc.SendRequest("object::full"))
 			{
-				var response = jsonrpc.GetRequestResponseDeserialized<Response<ObservableCollection<JdObject>>>();
-				foreach (JdObject obj in response.result)
+				var response = jsonrpc.GetRequestResponseDeserialized<Response<RootJeedomObjects>>();
+				foreach (JeedomObject obj in response.result.result)
 				{
-					var lst = from o in ObjectList where o.Id == obj.Id select o;
+					var lst = from o in ObjectList where o.id == obj.id select o;
 					if (lst.Count() != 0)
 					{
 						var ob = lst.FirstOrDefault();
@@ -420,19 +420,19 @@ namespace Jeedom.API
 			if (parameters == null)
 			{
 				parameters = new Parameters();
-				parameters.id = cmd.Id;
-				parameters.name = cmd.Name;
+				parameters.id = cmd.id;
+				parameters.name = cmd.name;
 			}
 			var jsonrpc = new JsonRpcClient(parameters);
 
 			if (await jsonrpc.SendRequest("cmd::execCmd"))
 			{
 				var response = jsonrpc.GetRequestResponseDeserialized<Response<CommandResult>>();
-				cmd.Value = response.result.value;
+				cmd.value = response.result.value;
 			}
 			else
 			{
-				cmd.Value = "N/A";
+				cmd.value = "N/A";
 			}
 			cmd.Updating = false;
 		}
@@ -507,7 +507,7 @@ namespace Jeedom.API
 
 						case "eqLogic::update":
 							var eveq = e as Event<EventOptionEqLogic>;
-							var eq = (from c in EqLogicList where c.Id == eveq.Option.EqLogicId select c).FirstOrDefault();
+							var eq = (from c in EqLogicList where c.id == eveq.Option.EqLogicId select c).FirstOrDefault();
 
 							if (eq != null)
 							{
@@ -558,22 +558,22 @@ namespace Jeedom.API
 			var assembly = GetType().GetTypeInfo().Assembly;
 			var stream = assembly.GetManifestResourceStream("Jeedom.Demo.object.json");
 			var sr = new StreamReader(stream);
-			ObjectList = JsonConvert.DeserializeObject<ObservableCollection<JdObject>>(sr.ReadToEnd());
+			ObjectList = JsonConvert.DeserializeObject<ObservableCollection<JeedomObject>>(sr.ReadToEnd());
 
 			// Populate EqlogicList and CmdList
 			EqLogicList.Clear();
 			CommandList.Clear();
-			foreach (var obj in ObjectList)
-			{
-				foreach (var eq in obj.EqLogics)
-				{
-					EqLogicList.Add(eq);
-					foreach (var cmd in eq.Cmds)
-					{
-						CommandList.Add(cmd);
-					}
-				}
-			}
+			//foreach (var obj in ObjectList)
+			//{
+			//	foreach (var eq in obj.EqLogics)
+			//	{
+			//		EqLogicList.Add(eq);
+			//		foreach (var cmd in eq.Cmds)
+			//		{
+			//			CommandList.Add(cmd);
+			//		}
+			//	}
+			//}
 
 			LoadingMessage = "Chargement des Scénarios";
 			stream = assembly.GetManifestResourceStream("Jeedom.Demo.scenario.json");
@@ -647,7 +647,7 @@ namespace Jeedom.API
 				var idx = id.Substring(3);
 				if (id.StartsWith("eq_"))
 				{
-					var lst = from e in EqLogicList where e.Id == idx select e;
+					var lst = from e in EqLogicList where e.id == idx select e;
 					if (lst.Count() != 0)
 					{
 						var eq = lst.First();
@@ -690,7 +690,7 @@ namespace Jeedom.API
 				return false;
 		}
 
-		public void RemoveFromFavorite(EqLogic eq)
+		public void RemoveFromFavorite(Model.EqLogic eq)
 		{
 			FavoriteList.Remove(eq);
 			_favoriteIdList.Remove("eq_" + eq.Id);
@@ -794,22 +794,22 @@ namespace Jeedom.API
 				var EqLogics = jsonrpc.GetRequestResponseDeserialized<Response<JdObject>>();
 				if (EqLogics != null)
 				{
-					foreach (EqLogic eq in EqLogics.result.EqLogics)
+					foreach (Model.EqLogic eq in EqLogics.result.EqLogics)
 					{
 						EqLogicList.Add(eq);
 					}
 				}
 
 				// Récupère la liste de toutes les cmds
-				var Cmds = jsonrpc.GetRequestResponseDeserialized<Response<EqLogic>>();
+				var Cmds = jsonrpc.GetRequestResponseDeserialized<Response<Model.EqLogic>>();
 				if (Cmds.result.Cmds != null)
 				{
-					foreach (Command cmd in Cmds.result.Cmds)
+					foreach (Model.Command cmd in Cmds.result.Cmds)
 					{
 						// AJoute la cmd à son eqLogic
 						var eq = (from e in EqLogicList where e.Id == cmd.EqLogic_id select e).FirstOrDefault();
 						if (eq.Cmds == null)
-							eq.Cmds = new ObservableCollectionEx<Command>();
+							eq.Cmds = new ObservableCollectionEx<Model.Command>();
 						eq.Cmds.Add(cmd);
 
 						/*if (EqLogicList.Where(o => o.Id.Equals(cmd.EqLogic_id)).FirstOrDefault().Cmds == null)
@@ -831,20 +831,20 @@ namespace Jeedom.API
 				// Affecte les eqLogics à leurs objects correspondants
 				foreach (EqLogic eq in EqLogicList)
 				{
-					var ob = (from o in ObjectList where o.Id == eq.ObjectId select o).FirstOrDefault();
-					if (ob.EqLogics == null)
-						ob.EqLogics = new ObservableCollectionEx<EqLogic>();
-					ob.EqLogics.Add(eq);
-					/*if (ObjectList.Where(o => o.Id.Equals(eq.ObjectId)).FirstOrDefault().EqLogics == null)
-                        ObjectList.Where(o => o.Id.Equals(eq.ObjectId)).FirstOrDefault().EqLogics = new ObservableCollectionEx<EqLogic>();
-                    ObjectList.Where(o => o.Id.Equals(eq.ObjectId)).FirstOrDefault().EqLogics.Add(eq);*/
+					var ob = (from o in ObjectList where o.id == eq.ObjectId select o).FirstOrDefault();
+
+					if (ob.eqLogics == null)
+						ob.eqLogics = new List<EqLogic>();
+					ob.eqLogics.Add(eq);
+
 				}
 
 				// Suppression des objects sans eqLogics
 				for (int i = ObjectList.Count - 1; i >= 0; i--)
 				{
-					if (ObjectList[i].EqLogics == null)
-						ObjectList.RemoveAt(i);
+					//todo review eqlogics
+					//if (ObjectList[i].EqLogics == null)
+					//	ObjectList.RemoveAt(i);
 				}
 
 				// Mise à jour des favoris
@@ -856,10 +856,10 @@ namespace Jeedom.API
 
 		public async Task UpdateEqLogic(EqLogic eq)
 		{
-			if (eq.Cmds == null)
+			if (eq.cmds == null)
 				return;
 
-			var infoCmds = (from cmd in eq.Cmds where cmd.Type == "info" select cmd).DefaultIfEmpty();
+			var infoCmds = (from cmd in eq.cmds where cmd.type == "info" select cmd).DefaultIfEmpty();
 			if (infoCmds.Count() > 0)
 			{
 				foreach (Command cmd in infoCmds)
@@ -921,10 +921,10 @@ namespace Jeedom.API
 
 			if (await jsonrpc.SendRequest("object::all"))
 			{
-				var response = jsonrpc.GetRequestResponseDeserialized<Response<ObservableCollection<JdObject>>>();
-				foreach (JdObject obj in response.result)
+				var response = jsonrpc.GetRequestResponseDeserialized<Response<ObservableCollection<JeedomObject>>>();
+				foreach (JeedomObject obj in response.result)
 				{
-					var lst = from o in ObjectList where o.Id == obj.Id select o;
+					var lst = from o in ObjectList where o.id == obj.id select o;
 					if (lst.Count() != 0)
 					{
 						var ob = lst.FirstOrDefault();
