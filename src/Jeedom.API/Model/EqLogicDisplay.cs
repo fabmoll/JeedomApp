@@ -1,152 +1,829 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Jeedom.API.Model
 {
-    [DataContract]
-    public class CustomParameters
-    {
-        [DataMember(Name = "JeedomAppTemplate")]
-        public string JeedomAppTemplate { get; set; }
+	public class EqLogicDisplay
+	{
+		public object showObjectNameOnview { get; set; }
+		public int showObjectNameOndview { get; set; }
+		public int showObjectNameOnmview { get; set; }
+		public string height { get; set; }
+		public string width { get; set; }
+		public LayoutDashboardTableParameters layoutdashboardtableparameters { get; set; }
+		public LayoutMobileTableParameters layoutmobiletableparameters { get; set; }
+		public int layoutdashboardtablecmd259line { get; set; }
+		public int layoutdashboardtablecmd259column { get; set; }
+		public int layoutdashboardtablecmd255line { get; set; }
+		public int layoutdashboardtablecmd255column { get; set; }
+		public int layoutdashboardtablecmd256line { get; set; }
+		public int layoutdashboardtablecmd256column { get; set; }
+		public int layoutdashboardtablecmd257line { get; set; }
+		public int layoutdashboardtablecmd257column { get; set; }
+		public int layoutdashboardtablecmd258line { get; set; }
+		public int layoutdashboardtablecmd258column { get; set; }
+		public int layoutmobiletablecmd259line { get; set; }
+		public int layoutmobiletablecmd259column { get; set; }
+		public int layoutmobiletablecmd255line { get; set; }
+		public int layoutmobiletablecmd255column { get; set; }
+		public int layoutmobiletablecmd256line { get; set; }
+		public int layoutmobiletablecmd256column { get; set; }
+		public int layoutmobiletablecmd257line { get; set; }
+		public int layoutmobiletablecmd257column { get; set; }
+		public int layoutmobiletablecmd258line { get; set; }
+		public int layoutmobiletablecmd258column { get; set; }
+		public int layoutdashboardtablecmd260line { get; set; }
+		public int layoutdashboardtablecmd260column { get; set; }
+		public int layoutdashboardtablecmd261line { get; set; }
+		public int layoutdashboardtablecmd261column { get; set; }
+		public int layoutdashboardtablecmd262line { get; set; }
+		public int layoutdashboardtablecmd262column { get; set; }
+		public int layoutdashboardtablecmd263line { get; set; }
+		public int layoutdashboardtablecmd263column { get; set; }
+		public int layoutdashboardtablecmd264line { get; set; }
+		public int layoutdashboardtablecmd264column { get; set; }
+		public int layoutmobiletablecmd260line { get; set; }
+		public int layoutmobiletablecmd260column { get; set; }
+		public int layoutmobiletablecmd261line { get; set; }
+		public int layoutmobiletablecmd261column { get; set; }
+		public int layoutmobiletablecmd262line { get; set; }
+		public int layoutmobiletablecmd262column { get; set; }
+		public int layoutmobiletablecmd263line { get; set; }
+		public int layoutmobiletablecmd263column { get; set; }
+		public int layoutmobiletablecmd264line { get; set; }
+		public int layoutmobiletablecmd264column { get; set; }
+		public int layoutdashboardtablecmd269line { get; set; }
+		public int layoutdashboardtablecmd269column { get; set; }
+		public int layoutdashboardtablecmd265line { get; set; }
+		public int layoutdashboardtablecmd265column { get; set; }
+		public int layoutdashboardtablecmd266line { get; set; }
+		public int layoutdashboardtablecmd266column { get; set; }
+		public int layoutdashboardtablecmd267line { get; set; }
+		public int layoutdashboardtablecmd267column { get; set; }
+		public int layoutdashboardtablecmd268line { get; set; }
+		public int layoutdashboardtablecmd268column { get; set; }
+		public int layoutmobiletablecmd269line { get; set; }
+		public int layoutmobiletablecmd269column { get; set; }
+		public int layoutmobiletablecmd265line { get; set; }
+		public int layoutmobiletablecmd265column { get; set; }
+		public int layoutmobiletablecmd266line { get; set; }
+		public int layoutmobiletablecmd266column { get; set; }
+		public int layoutmobiletablecmd267line { get; set; }
+		public int layoutmobiletablecmd267column { get; set; }
+		public int layoutmobiletablecmd268line { get; set; }
+		public int layoutmobiletablecmd268column { get; set; }
+		public int layoutdashboardtablecmd270line { get; set; }
+		public int layoutdashboardtablecmd270column { get; set; }
+		public int layoutdashboardtablecmd271line { get; set; }
+		public int layoutdashboardtablecmd271column { get; set; }
+		public int layoutdashboardtablecmd272line { get; set; }
+		public int layoutdashboardtablecmd272column { get; set; }
+		public int layoutdashboardtablecmd273line { get; set; }
+		public int layoutdashboardtablecmd273column { get; set; }
+		public int layoutmobiletablecmd270line { get; set; }
+		public int layoutmobiletablecmd270column { get; set; }
+		public int layoutmobiletablecmd271line { get; set; }
+		public int layoutmobiletablecmd271column { get; set; }
+		public int layoutmobiletablecmd272line { get; set; }
+		public int layoutmobiletablecmd272column { get; set; }
+		public int layoutmobiletablecmd273line { get; set; }
+		public int layoutmobiletablecmd273column { get; set; }
+		public int layoutdashboardtablecmd278line { get; set; }
+		public int layoutdashboardtablecmd278column { get; set; }
+		public int layoutdashboardtablecmd274line { get; set; }
+		public int layoutdashboardtablecmd274column { get; set; }
+		public int layoutdashboardtablecmd275line { get; set; }
+		public int layoutdashboardtablecmd275column { get; set; }
+		public int layoutdashboardtablecmd276line { get; set; }
+		public int layoutdashboardtablecmd276column { get; set; }
+		public int layoutdashboardtablecmd277line { get; set; }
+		public int layoutdashboardtablecmd277column { get; set; }
+		public int layoutmobiletablecmd278line { get; set; }
+		public int layoutmobiletablecmd278column { get; set; }
+		public int layoutmobiletablecmd274line { get; set; }
+		public int layoutmobiletablecmd274column { get; set; }
+		public int layoutmobiletablecmd275line { get; set; }
+		public int layoutmobiletablecmd275column { get; set; }
+		public int layoutmobiletablecmd276line { get; set; }
+		public int layoutmobiletablecmd276column { get; set; }
+		public int layoutmobiletablecmd277line { get; set; }
+		public int layoutmobiletablecmd277column { get; set; }
+		public string showNameOndashboard { get; set; }
+		public string showNameOnplan { get; set; }
+		public string showNameOnview { get; set; }
+		public string showNameOnmobile { get; set; }
+		public string showObjectNameOndashboard { get; set; }
+		public string showObjectNameOnplan { get; set; }
+		public string showObjectNameOnmobile { get; set; }
+		public string backgroundcolordefaultdashboard { get; set; }
+		public string backgroundcolortransparentdashboard { get; set; }
+		public string backgroundcolordashboard { get; set; }
+		public string backgroundcolordefaultplan { get; set; }
+		public string backgroundcolortransparentplan { get; set; }
+		public string backgroundcolorplan { get; set; }
+		public string backgroundcolordefaultview { get; set; }
+		public string backgroundcolortransparentview { get; set; }
+		public string backgroundcolorview { get; set; }
+		public string backgroundcolordefaultmobile { get; set; }
+		public string backgroundcolortransparentmobile { get; set; }
+		public string backgroundcolormobile { get; set; }
+		public string backgroundopacitydashboard { get; set; }
+		public string backgroundopacityplan { get; set; }
+		public string backgroundopacityview { get; set; }
+		public string backgroundopacitymobile { get; set; }
+		public string colordefaultdashboard { get; set; }
+		public string colordashboard { get; set; }
+		public string colordefaultplan { get; set; }
+		public string colorplan { get; set; }
+		public string colordefaultview { get; set; }
+		public string colorview { get; set; }
+		public string colordefaultmobile { get; set; }
+		public string colormobile { get; set; }
+		public string borderdefaultdashboard { get; set; }
+		public string borderdashboard { get; set; }
+		public string borderdefaultplan { get; set; }
+		public string borderplan { get; set; }
+		public string borderdefaultview { get; set; }
+		public string borderview { get; set; }
+		public string borderdefaultmobile { get; set; }
+		public string bordermobile { get; set; }
+		public string borderradiusdefaultdashboard { get; set; }
+		public string borderradiusdashboard { get; set; }
+		public string borderradiusdefaultplan { get; set; }
+		public string borderradiusplan { get; set; }
+		public string borderradiusdefaultview { get; set; }
+		public string borderradiusview { get; set; }
+		public string borderradiusdefaultmobile { get; set; }
+		public string borderradiusmobile { get; set; }
+		public string layoutdashboard { get; set; }
+		public string layoutdashboardtablenbLine { get; set; }
+		public string layoutdashboardtablenbColumn { get; set; }
+		public object[] parameters { get; set; }
+		public int layoutdashboardtablecmd279line { get; set; }
+		public int layoutdashboardtablecmd279column { get; set; }
+		public int layoutdashboardtablecmd280line { get; set; }
+		public int layoutdashboardtablecmd280column { get; set; }
+		public int layoutdashboardtablecmd281line { get; set; }
+		public int layoutdashboardtablecmd281column { get; set; }
+		public int layoutmobiletablecmd279line { get; set; }
+		public int layoutmobiletablecmd279column { get; set; }
+		public int layoutmobiletablecmd280line { get; set; }
+		public int layoutmobiletablecmd280column { get; set; }
+		public int layoutmobiletablecmd281line { get; set; }
+		public int layoutmobiletablecmd281column { get; set; }
+		public int layoutdashboardtablecmd286line { get; set; }
+		public int layoutdashboardtablecmd286column { get; set; }
+		public int layoutdashboardtablecmd282line { get; set; }
+		public int layoutdashboardtablecmd282column { get; set; }
+		public int layoutdashboardtablecmd283line { get; set; }
+		public int layoutdashboardtablecmd283column { get; set; }
+		public int layoutdashboardtablecmd284line { get; set; }
+		public int layoutdashboardtablecmd284column { get; set; }
+		public int layoutdashboardtablecmd285line { get; set; }
+		public int layoutdashboardtablecmd285column { get; set; }
+		public int layoutmobiletablecmd286line { get; set; }
+		public int layoutmobiletablecmd286column { get; set; }
+		public int layoutmobiletablecmd282line { get; set; }
+		public int layoutmobiletablecmd282column { get; set; }
+		public int layoutmobiletablecmd283line { get; set; }
+		public int layoutmobiletablecmd283column { get; set; }
+		public int layoutmobiletablecmd284line { get; set; }
+		public int layoutmobiletablecmd284column { get; set; }
+		public int layoutmobiletablecmd285line { get; set; }
+		public int layoutmobiletablecmd285column { get; set; }
+		public int layoutdashboardtablecmd291line { get; set; }
+		public int layoutdashboardtablecmd291column { get; set; }
+		public int layoutdashboardtablecmd287line { get; set; }
+		public int layoutdashboardtablecmd287column { get; set; }
+		public int layoutdashboardtablecmd288line { get; set; }
+		public int layoutdashboardtablecmd288column { get; set; }
+		public int layoutdashboardtablecmd289line { get; set; }
+		public int layoutdashboardtablecmd289column { get; set; }
+		public int layoutdashboardtablecmd290line { get; set; }
+		public int layoutdashboardtablecmd290column { get; set; }
+		public int layoutmobiletablecmd291line { get; set; }
+		public int layoutmobiletablecmd291column { get; set; }
+		public int layoutmobiletablecmd287line { get; set; }
+		public int layoutmobiletablecmd287column { get; set; }
+		public int layoutmobiletablecmd288line { get; set; }
+		public int layoutmobiletablecmd288column { get; set; }
+		public int layoutmobiletablecmd289line { get; set; }
+		public int layoutmobiletablecmd289column { get; set; }
+		public int layoutmobiletablecmd290line { get; set; }
+		public int layoutmobiletablecmd290column { get; set; }
+		public int layoutdashboardtablecmd292line { get; set; }
+		public int layoutdashboardtablecmd292column { get; set; }
+		public int layoutdashboardtablecmd293line { get; set; }
+		public int layoutdashboardtablecmd293column { get; set; }
+		public int layoutdashboardtablecmd294line { get; set; }
+		public int layoutdashboardtablecmd294column { get; set; }
+		public int layoutdashboardtablecmd295line { get; set; }
+		public int layoutdashboardtablecmd295column { get; set; }
+		public int layoutdashboardtablecmd296line { get; set; }
+		public int layoutdashboardtablecmd296column { get; set; }
+		public int layoutmobiletablecmd292line { get; set; }
+		public int layoutmobiletablecmd292column { get; set; }
+		public int layoutmobiletablecmd293line { get; set; }
+		public int layoutmobiletablecmd293column { get; set; }
+		public int layoutmobiletablecmd294line { get; set; }
+		public int layoutmobiletablecmd294column { get; set; }
+		public int layoutmobiletablecmd295line { get; set; }
+		public int layoutmobiletablecmd295column { get; set; }
+		public int layoutmobiletablecmd296line { get; set; }
+		public int layoutmobiletablecmd296column { get; set; }
+		public int layoutdashboardtablecmd301line { get; set; }
+		public int layoutdashboardtablecmd301column { get; set; }
+		public int layoutdashboardtablecmd297line { get; set; }
+		public int layoutdashboardtablecmd297column { get; set; }
+		public int layoutdashboardtablecmd298line { get; set; }
+		public int layoutdashboardtablecmd298column { get; set; }
+		public int layoutdashboardtablecmd299line { get; set; }
+		public int layoutdashboardtablecmd299column { get; set; }
+		public int layoutdashboardtablecmd300line { get; set; }
+		public int layoutdashboardtablecmd300column { get; set; }
+		public int layoutmobiletablecmd301line { get; set; }
+		public int layoutmobiletablecmd301column { get; set; }
+		public int layoutmobiletablecmd297line { get; set; }
+		public int layoutmobiletablecmd297column { get; set; }
+		public int layoutmobiletablecmd298line { get; set; }
+		public int layoutmobiletablecmd298column { get; set; }
+		public int layoutmobiletablecmd299line { get; set; }
+		public int layoutmobiletablecmd299column { get; set; }
+		public int layoutmobiletablecmd300line { get; set; }
+		public int layoutmobiletablecmd300column { get; set; }
+		public int layoutdashboardtablecmd165line { get; set; }
+		public int layoutdashboardtablecmd165column { get; set; }
+		public int layoutdashboardtablecmd164line { get; set; }
+		public int layoutdashboardtablecmd164column { get; set; }
+		public int layoutmobiletablecmd165line { get; set; }
+		public int layoutmobiletablecmd165column { get; set; }
+		public int layoutmobiletablecmd164line { get; set; }
+		public int layoutmobiletablecmd164column { get; set; }
+		public int layoutdashboardtablecmd166line { get; set; }
+		public int layoutdashboardtablecmd166column { get; set; }
+		public int layoutmobiletablecmd166line { get; set; }
+		public int layoutmobiletablecmd166column { get; set; }
+		public int layoutdashboardtablecmd312line { get; set; }
+		public int layoutdashboardtablecmd312column { get; set; }
+		public int layoutdashboardtablecmd313line { get; set; }
+		public int layoutdashboardtablecmd313column { get; set; }
+		public int layoutdashboardtablecmd314line { get; set; }
+		public int layoutdashboardtablecmd314column { get; set; }
+		public int layoutdashboardtablecmd315line { get; set; }
+		public int layoutdashboardtablecmd315column { get; set; }
+		public int layoutdashboardtablecmd316line { get; set; }
+		public int layoutdashboardtablecmd316column { get; set; }
+		public int layoutmobiletablecmd312line { get; set; }
+		public int layoutmobiletablecmd312column { get; set; }
+		public int layoutmobiletablecmd313line { get; set; }
+		public int layoutmobiletablecmd313column { get; set; }
+		public int layoutmobiletablecmd314line { get; set; }
+		public int layoutmobiletablecmd314column { get; set; }
+		public int layoutmobiletablecmd315line { get; set; }
+		public int layoutmobiletablecmd315column { get; set; }
+		public int layoutmobiletablecmd316line { get; set; }
+		public int layoutmobiletablecmd316column { get; set; }
+		public int layoutdashboardtablecmd317line { get; set; }
+		public int layoutdashboardtablecmd317column { get; set; }
+		public int layoutdashboardtablecmd318line { get; set; }
+		public int layoutdashboardtablecmd318column { get; set; }
+		public int layoutdashboardtablecmd319line { get; set; }
+		public int layoutdashboardtablecmd319column { get; set; }
+		public int layoutdashboardtablecmd320line { get; set; }
+		public int layoutdashboardtablecmd320column { get; set; }
+		public int layoutdashboardtablecmd321line { get; set; }
+		public int layoutdashboardtablecmd321column { get; set; }
+		public int layoutmobiletablecmd317line { get; set; }
+		public int layoutmobiletablecmd317column { get; set; }
+		public int layoutmobiletablecmd318line { get; set; }
+		public int layoutmobiletablecmd318column { get; set; }
+		public int layoutmobiletablecmd319line { get; set; }
+		public int layoutmobiletablecmd319column { get; set; }
+		public int layoutmobiletablecmd320line { get; set; }
+		public int layoutmobiletablecmd320column { get; set; }
+		public int layoutmobiletablecmd321line { get; set; }
+		public int layoutmobiletablecmd321column { get; set; }
+		public int layoutdashboardtablecmd246line { get; set; }
+		public int layoutdashboardtablecmd246column { get; set; }
+		public int layoutdashboardtablecmd247line { get; set; }
+		public int layoutdashboardtablecmd247column { get; set; }
+		public int layoutmobiletablecmd246line { get; set; }
+		public int layoutmobiletablecmd246column { get; set; }
+		public int layoutmobiletablecmd247line { get; set; }
+		public int layoutmobiletablecmd247column { get; set; }
+		public int layoutdashboardtablecmd248line { get; set; }
+		public int layoutdashboardtablecmd248column { get; set; }
+		public int layoutmobiletablecmd248line { get; set; }
+		public int layoutmobiletablecmd248column { get; set; }
+		public int layoutdashboardtablecmd249line { get; set; }
+		public int layoutdashboardtablecmd249column { get; set; }
+		public int layoutdashboardtablecmd250line { get; set; }
+		public int layoutdashboardtablecmd250column { get; set; }
+		public int layoutmobiletablecmd249line { get; set; }
+		public int layoutmobiletablecmd249column { get; set; }
+		public int layoutmobiletablecmd250line { get; set; }
+		public int layoutmobiletablecmd250column { get; set; }
+		public int layoutdashboardtablecmd210line { get; set; }
+		public int layoutdashboardtablecmd210column { get; set; }
+		public int layoutdashboardtablecmd211line { get; set; }
+		public int layoutdashboardtablecmd211column { get; set; }
+		public int layoutdashboardtablecmd212line { get; set; }
+		public int layoutdashboardtablecmd212column { get; set; }
+		public int layoutdashboardtablecmd213line { get; set; }
+		public int layoutdashboardtablecmd213column { get; set; }
+		public int layoutmobiletablecmd210line { get; set; }
+		public int layoutmobiletablecmd210column { get; set; }
+		public int layoutmobiletablecmd211line { get; set; }
+		public int layoutmobiletablecmd211column { get; set; }
+		public int layoutmobiletablecmd212line { get; set; }
+		public int layoutmobiletablecmd212column { get; set; }
+		public int layoutmobiletablecmd213line { get; set; }
+		public int layoutmobiletablecmd213column { get; set; }
+		public string showOndashboard { get; set; }
+		public string showOnplan { get; set; }
+		public string showOnview { get; set; }
+		public string showOnmobile { get; set; }
+		public int layoutdashboardtablecmd144line { get; set; }
+		public int layoutdashboardtablecmd144column { get; set; }
+		public int layoutdashboardtablecmd154line { get; set; }
+		public int layoutdashboardtablecmd154column { get; set; }
+		public int layoutdashboardtablecmd156line { get; set; }
+		public int layoutdashboardtablecmd156column { get; set; }
+		public int layoutdashboardtablecmd158line { get; set; }
+		public int layoutdashboardtablecmd158column { get; set; }
+		public int layoutdashboardtablecmd160line { get; set; }
+		public int layoutdashboardtablecmd160column { get; set; }
+		public int layoutdashboardtablecmd140line { get; set; }
+		public int layoutdashboardtablecmd140column { get; set; }
+		public int layoutdashboardtablecmd139line { get; set; }
+		public int layoutdashboardtablecmd139column { get; set; }
+		public int layoutdashboardtablecmd136line { get; set; }
+		public int layoutdashboardtablecmd136column { get; set; }
+		public int layoutdashboardtablecmd141line { get; set; }
+		public int layoutdashboardtablecmd141column { get; set; }
+		public int layoutdashboardtablecmd145line { get; set; }
+		public int layoutdashboardtablecmd145column { get; set; }
+		public int layoutdashboardtablecmd155line { get; set; }
+		public int layoutdashboardtablecmd155column { get; set; }
+		public int layoutdashboardtablecmd157line { get; set; }
+		public int layoutdashboardtablecmd157column { get; set; }
+		public int layoutdashboardtablecmd159line { get; set; }
+		public int layoutdashboardtablecmd159column { get; set; }
+		public int layoutdashboardtablecmd161line { get; set; }
+		public int layoutdashboardtablecmd161column { get; set; }
+		public int layoutdashboardtablecmd137line { get; set; }
+		public int layoutdashboardtablecmd137column { get; set; }
+		public int layoutdashboardtablecmd162line { get; set; }
+		public int layoutdashboardtablecmd162column { get; set; }
+		public int layoutdashboardtablecmd135line { get; set; }
+		public int layoutdashboardtablecmd135column { get; set; }
+		public int layoutdashboardtablecmd143line { get; set; }
+		public int layoutdashboardtablecmd143column { get; set; }
+		public int layoutdashboardtablecmd147line { get; set; }
+		public int layoutdashboardtablecmd147column { get; set; }
+		public int layoutdashboardtablecmd149line { get; set; }
+		public int layoutdashboardtablecmd149column { get; set; }
+		public int layoutdashboardtablecmd151line { get; set; }
+		public int layoutdashboardtablecmd151column { get; set; }
+		public int layoutdashboardtablecmd153line { get; set; }
+		public int layoutdashboardtablecmd153column { get; set; }
+		public int layoutdashboardtablecmd142line { get; set; }
+		public int layoutdashboardtablecmd142column { get; set; }
+		public int layoutdashboardtablecmd146line { get; set; }
+		public int layoutdashboardtablecmd146column { get; set; }
+		public int layoutdashboardtablecmd148line { get; set; }
+		public int layoutdashboardtablecmd148column { get; set; }
+		public int layoutdashboardtablecmd150line { get; set; }
+		public int layoutdashboardtablecmd150column { get; set; }
+		public int layoutdashboardtablecmd152line { get; set; }
+		public int layoutdashboardtablecmd152column { get; set; }
+		public int layoutdashboardtablecmd138line { get; set; }
+		public int layoutdashboardtablecmd138column { get; set; }
+		public int layoutmobiletablecmd144line { get; set; }
+		public int layoutmobiletablecmd144column { get; set; }
+		public int layoutmobiletablecmd154line { get; set; }
+		public int layoutmobiletablecmd154column { get; set; }
+		public int layoutmobiletablecmd156line { get; set; }
+		public int layoutmobiletablecmd156column { get; set; }
+		public int layoutmobiletablecmd158line { get; set; }
+		public int layoutmobiletablecmd158column { get; set; }
+		public int layoutmobiletablecmd160line { get; set; }
+		public int layoutmobiletablecmd160column { get; set; }
+		public int layoutmobiletablecmd140line { get; set; }
+		public int layoutmobiletablecmd140column { get; set; }
+		public int layoutmobiletablecmd139line { get; set; }
+		public int layoutmobiletablecmd139column { get; set; }
+		public int layoutmobiletablecmd136line { get; set; }
+		public int layoutmobiletablecmd136column { get; set; }
+		public int layoutmobiletablecmd141line { get; set; }
+		public int layoutmobiletablecmd141column { get; set; }
+		public int layoutmobiletablecmd145line { get; set; }
+		public int layoutmobiletablecmd145column { get; set; }
+		public int layoutmobiletablecmd155line { get; set; }
+		public int layoutmobiletablecmd155column { get; set; }
+		public int layoutmobiletablecmd157line { get; set; }
+		public int layoutmobiletablecmd157column { get; set; }
+		public int layoutmobiletablecmd159line { get; set; }
+		public int layoutmobiletablecmd159column { get; set; }
+		public int layoutmobiletablecmd161line { get; set; }
+		public int layoutmobiletablecmd161column { get; set; }
+		public int layoutmobiletablecmd137line { get; set; }
+		public int layoutmobiletablecmd137column { get; set; }
+		public int layoutmobiletablecmd162line { get; set; }
+		public int layoutmobiletablecmd162column { get; set; }
+		public int layoutmobiletablecmd135line { get; set; }
+		public int layoutmobiletablecmd135column { get; set; }
+		public int layoutmobiletablecmd143line { get; set; }
+		public int layoutmobiletablecmd143column { get; set; }
+		public int layoutmobiletablecmd147line { get; set; }
+		public int layoutmobiletablecmd147column { get; set; }
+		public int layoutmobiletablecmd149line { get; set; }
+		public int layoutmobiletablecmd149column { get; set; }
+		public int layoutmobiletablecmd151line { get; set; }
+		public int layoutmobiletablecmd151column { get; set; }
+		public int layoutmobiletablecmd153line { get; set; }
+		public int layoutmobiletablecmd153column { get; set; }
+		public int layoutmobiletablecmd142line { get; set; }
+		public int layoutmobiletablecmd142column { get; set; }
+		public int layoutmobiletablecmd146line { get; set; }
+		public int layoutmobiletablecmd146column { get; set; }
+		public int layoutmobiletablecmd148line { get; set; }
+		public int layoutmobiletablecmd148column { get; set; }
+		public int layoutmobiletablecmd150line { get; set; }
+		public int layoutmobiletablecmd150column { get; set; }
+		public int layoutmobiletablecmd152line { get; set; }
+		public int layoutmobiletablecmd152column { get; set; }
+		public int layoutmobiletablecmd138line { get; set; }
+		public int layoutmobiletablecmd138column { get; set; }
+		public int layoutdashboardtablecmd194line { get; set; }
+		public int layoutdashboardtablecmd194column { get; set; }
+		public int layoutdashboardtablecmd192line { get; set; }
+		public int layoutdashboardtablecmd192column { get; set; }
+		public int layoutdashboardtablecmd193line { get; set; }
+		public int layoutdashboardtablecmd193column { get; set; }
+		public int layoutdashboardtablecmd203line { get; set; }
+		public int layoutdashboardtablecmd203column { get; set; }
+		public int layoutdashboardtablecmd191line { get; set; }
+		public int layoutdashboardtablecmd191column { get; set; }
+		public int layoutdashboardtablecmd190line { get; set; }
+		public int layoutdashboardtablecmd190column { get; set; }
+		public int layoutdashboardtablecmd200line { get; set; }
+		public int layoutdashboardtablecmd200column { get; set; }
+		public int layoutdashboardtablecmd201line { get; set; }
+		public int layoutdashboardtablecmd201column { get; set; }
+		public int layoutdashboardtablecmd202line { get; set; }
+		public int layoutdashboardtablecmd202column { get; set; }
+		public int layoutdashboardtablecmd195line { get; set; }
+		public int layoutdashboardtablecmd195column { get; set; }
+		public int layoutdashboardtablecmd196line { get; set; }
+		public int layoutdashboardtablecmd196column { get; set; }
+		public int layoutdashboardtablecmd207line { get; set; }
+		public int layoutdashboardtablecmd207column { get; set; }
+		public int layoutdashboardtablecmd206line { get; set; }
+		public int layoutdashboardtablecmd206column { get; set; }
+		public int layoutdashboardtablecmd209line { get; set; }
+		public int layoutdashboardtablecmd209column { get; set; }
+		public int layoutdashboardtablecmd208line { get; set; }
+		public int layoutdashboardtablecmd208column { get; set; }
+		public int layoutdashboardtablecmd199line { get; set; }
+		public int layoutdashboardtablecmd199column { get; set; }
+		public int layoutdashboardtablecmd205line { get; set; }
+		public int layoutdashboardtablecmd205column { get; set; }
+		public int layoutdashboardtablecmd197line { get; set; }
+		public int layoutdashboardtablecmd197column { get; set; }
+		public int layoutdashboardtablecmd198line { get; set; }
+		public int layoutdashboardtablecmd198column { get; set; }
+		public int layoutdashboardtablecmd204line { get; set; }
+		public int layoutdashboardtablecmd204column { get; set; }
+		public int layoutmobiletablecmd194line { get; set; }
+		public int layoutmobiletablecmd194column { get; set; }
+		public int layoutmobiletablecmd192line { get; set; }
+		public int layoutmobiletablecmd192column { get; set; }
+		public int layoutmobiletablecmd193line { get; set; }
+		public int layoutmobiletablecmd193column { get; set; }
+		public int layoutmobiletablecmd203line { get; set; }
+		public int layoutmobiletablecmd203column { get; set; }
+		public int layoutmobiletablecmd191line { get; set; }
+		public int layoutmobiletablecmd191column { get; set; }
+		public int layoutmobiletablecmd190line { get; set; }
+		public int layoutmobiletablecmd190column { get; set; }
+		public int layoutmobiletablecmd200line { get; set; }
+		public int layoutmobiletablecmd200column { get; set; }
+		public int layoutmobiletablecmd201line { get; set; }
+		public int layoutmobiletablecmd201column { get; set; }
+		public int layoutmobiletablecmd202line { get; set; }
+		public int layoutmobiletablecmd202column { get; set; }
+		public int layoutmobiletablecmd195line { get; set; }
+		public int layoutmobiletablecmd195column { get; set; }
+		public int layoutmobiletablecmd196line { get; set; }
+		public int layoutmobiletablecmd196column { get; set; }
+		public int layoutmobiletablecmd207line { get; set; }
+		public int layoutmobiletablecmd207column { get; set; }
+		public int layoutmobiletablecmd206line { get; set; }
+		public int layoutmobiletablecmd206column { get; set; }
+		public int layoutmobiletablecmd209line { get; set; }
+		public int layoutmobiletablecmd209column { get; set; }
+		public int layoutmobiletablecmd208line { get; set; }
+		public int layoutmobiletablecmd208column { get; set; }
+		public int layoutmobiletablecmd199line { get; set; }
+		public int layoutmobiletablecmd199column { get; set; }
+		public int layoutmobiletablecmd205line { get; set; }
+		public int layoutmobiletablecmd205column { get; set; }
+		public int layoutmobiletablecmd197line { get; set; }
+		public int layoutmobiletablecmd197column { get; set; }
+		public int layoutmobiletablecmd198line { get; set; }
+		public int layoutmobiletablecmd198column { get; set; }
+		public int layoutmobiletablecmd204line { get; set; }
+		public int layoutmobiletablecmd204column { get; set; }
+		public int layoutdashboardtablecmd214line { get; set; }
+		public int layoutdashboardtablecmd214column { get; set; }
+		public int layoutdashboardtablecmd215line { get; set; }
+		public int layoutdashboardtablecmd215column { get; set; }
+		public int layoutdashboardtablecmd216line { get; set; }
+		public int layoutdashboardtablecmd216column { get; set; }
+		public int layoutmobiletablecmd214line { get; set; }
+		public int layoutmobiletablecmd214column { get; set; }
+		public int layoutmobiletablecmd215line { get; set; }
+		public int layoutmobiletablecmd215column { get; set; }
+		public int layoutmobiletablecmd216line { get; set; }
+		public int layoutmobiletablecmd216column { get; set; }
+		public int layoutdashboardtablecmd241line { get; set; }
+		public int layoutdashboardtablecmd241column { get; set; }
+		public int layoutdashboardtablecmd242line { get; set; }
+		public int layoutdashboardtablecmd242column { get; set; }
+		public int layoutdashboardtablecmd243line { get; set; }
+		public int layoutdashboardtablecmd243column { get; set; }
+		public int layoutmobiletablecmd241line { get; set; }
+		public int layoutmobiletablecmd241column { get; set; }
+		public int layoutmobiletablecmd242line { get; set; }
+		public int layoutmobiletablecmd242column { get; set; }
+		public int layoutmobiletablecmd243line { get; set; }
+		public int layoutmobiletablecmd243column { get; set; }
+		public int layoutdashboardtablecmd181line { get; set; }
+		public int layoutdashboardtablecmd181column { get; set; }
+		public int layoutdashboardtablecmd182line { get; set; }
+		public int layoutdashboardtablecmd182column { get; set; }
+		public int layoutdashboardtablecmd183line { get; set; }
+		public int layoutdashboardtablecmd183column { get; set; }
+		public int layoutmobiletablecmd181line { get; set; }
+		public int layoutmobiletablecmd181column { get; set; }
+		public int layoutmobiletablecmd182line { get; set; }
+		public int layoutmobiletablecmd182column { get; set; }
+		public int layoutmobiletablecmd183line { get; set; }
+		public int layoutmobiletablecmd183column { get; set; }
+		public int layoutdashboardtablecmd184line { get; set; }
+		public int layoutdashboardtablecmd184column { get; set; }
+		public int layoutdashboardtablecmd185line { get; set; }
+		public int layoutdashboardtablecmd185column { get; set; }
+		public int layoutdashboardtablecmd186line { get; set; }
+		public int layoutdashboardtablecmd186column { get; set; }
+		public int layoutmobiletablecmd184line { get; set; }
+		public int layoutmobiletablecmd184column { get; set; }
+		public int layoutmobiletablecmd185line { get; set; }
+		public int layoutmobiletablecmd185column { get; set; }
+		public int layoutmobiletablecmd186line { get; set; }
+		public int layoutmobiletablecmd186column { get; set; }
+		public int layoutdashboardtablecmd187line { get; set; }
+		public int layoutdashboardtablecmd187column { get; set; }
+		public int layoutdashboardtablecmd188line { get; set; }
+		public int layoutdashboardtablecmd188column { get; set; }
+		public int layoutdashboardtablecmd189line { get; set; }
+		public int layoutdashboardtablecmd189column { get; set; }
+		public int layoutmobiletablecmd187line { get; set; }
+		public int layoutmobiletablecmd187column { get; set; }
+		public int layoutmobiletablecmd188line { get; set; }
+		public int layoutmobiletablecmd188column { get; set; }
+		public int layoutmobiletablecmd189line { get; set; }
+		public int layoutmobiletablecmd189column { get; set; }
+		public int layoutdashboardtablecmd233line { get; set; }
+		public int layoutdashboardtablecmd233column { get; set; }
+		public int layoutdashboardtablecmd234line { get; set; }
+		public int layoutdashboardtablecmd234column { get; set; }
+		public int layoutdashboardtablecmd235line { get; set; }
+		public int layoutdashboardtablecmd235column { get; set; }
+		public int layoutdashboardtablecmd236line { get; set; }
+		public int layoutdashboardtablecmd236column { get; set; }
+		public int layoutdashboardtablecmd237line { get; set; }
+		public int layoutdashboardtablecmd237column { get; set; }
+		public int layoutmobiletablecmd233line { get; set; }
+		public int layoutmobiletablecmd233column { get; set; }
+		public int layoutmobiletablecmd234line { get; set; }
+		public int layoutmobiletablecmd234column { get; set; }
+		public int layoutmobiletablecmd235line { get; set; }
+		public int layoutmobiletablecmd235column { get; set; }
+		public int layoutmobiletablecmd236line { get; set; }
+		public int layoutmobiletablecmd236column { get; set; }
+		public int layoutmobiletablecmd237line { get; set; }
+		public int layoutmobiletablecmd237column { get; set; }
+		public int layoutdashboardtablecmd302line { get; set; }
+		public int layoutdashboardtablecmd302column { get; set; }
+		public int layoutdashboardtablecmd303line { get; set; }
+		public int layoutdashboardtablecmd303column { get; set; }
+		public int layoutdashboardtablecmd304line { get; set; }
+		public int layoutdashboardtablecmd304column { get; set; }
+		public int layoutdashboardtablecmd305line { get; set; }
+		public int layoutdashboardtablecmd305column { get; set; }
+		public int layoutdashboardtablecmd306line { get; set; }
+		public int layoutdashboardtablecmd306column { get; set; }
+		public int layoutmobiletablecmd302line { get; set; }
+		public int layoutmobiletablecmd302column { get; set; }
+		public int layoutmobiletablecmd303line { get; set; }
+		public int layoutmobiletablecmd303column { get; set; }
+		public int layoutmobiletablecmd304line { get; set; }
+		public int layoutmobiletablecmd304column { get; set; }
+		public int layoutmobiletablecmd305line { get; set; }
+		public int layoutmobiletablecmd305column { get; set; }
+		public int layoutmobiletablecmd306line { get; set; }
+		public int layoutmobiletablecmd306column { get; set; }
+		public int layoutdashboardtablecmd307line { get; set; }
+		public int layoutdashboardtablecmd307column { get; set; }
+		public int layoutdashboardtablecmd308line { get; set; }
+		public int layoutdashboardtablecmd308column { get; set; }
+		public int layoutdashboardtablecmd309line { get; set; }
+		public int layoutdashboardtablecmd309column { get; set; }
+		public int layoutdashboardtablecmd310line { get; set; }
+		public int layoutdashboardtablecmd310column { get; set; }
+		public int layoutdashboardtablecmd311line { get; set; }
+		public int layoutdashboardtablecmd311column { get; set; }
+		public int layoutmobiletablecmd307line { get; set; }
+		public int layoutmobiletablecmd307column { get; set; }
+		public int layoutmobiletablecmd308line { get; set; }
+		public int layoutmobiletablecmd308column { get; set; }
+		public int layoutmobiletablecmd309line { get; set; }
+		public int layoutmobiletablecmd309column { get; set; }
+		public int layoutmobiletablecmd310line { get; set; }
+		public int layoutmobiletablecmd310column { get; set; }
+		public int layoutmobiletablecmd311line { get; set; }
+		public int layoutmobiletablecmd311column { get; set; }
+		public int layoutdashboardtablecmd13line { get; set; }
+		public int layoutdashboardtablecmd13column { get; set; }
+		public int layoutdashboardtablecmd2line { get; set; }
+		public int layoutdashboardtablecmd2column { get; set; }
+		public int layoutdashboardtablecmd4line { get; set; }
+		public int layoutdashboardtablecmd4column { get; set; }
+		public int layoutdashboardtablecmd6line { get; set; }
+		public int layoutdashboardtablecmd6column { get; set; }
+		public int layoutdashboardtablecmd8line { get; set; }
+		public int layoutdashboardtablecmd8column { get; set; }
+		public int layoutdashboardtablecmd10line { get; set; }
+		public int layoutdashboardtablecmd10column { get; set; }
+		public int layoutdashboardtablecmd12line { get; set; }
+		public int layoutdashboardtablecmd12column { get; set; }
+		public int layoutdashboardtablecmd14line { get; set; }
+		public int layoutdashboardtablecmd14column { get; set; }
+		public int layoutdashboardtablecmd1line { get; set; }
+		public int layoutdashboardtablecmd1column { get; set; }
+		public int layoutdashboardtablecmd3line { get; set; }
+		public int layoutdashboardtablecmd3column { get; set; }
+		public int layoutdashboardtablecmd5line { get; set; }
+		public int layoutdashboardtablecmd5column { get; set; }
+		public int layoutdashboardtablecmd7line { get; set; }
+		public int layoutdashboardtablecmd7column { get; set; }
+		public int layoutdashboardtablecmd9line { get; set; }
+		public int layoutdashboardtablecmd9column { get; set; }
+		public int layoutdashboardtablecmd11line { get; set; }
+		public int layoutdashboardtablecmd11column { get; set; }
+		public int layoutmobiletablecmd13line { get; set; }
+		public int layoutmobiletablecmd13column { get; set; }
+		public int layoutmobiletablecmd2line { get; set; }
+		public int layoutmobiletablecmd2column { get; set; }
+		public int layoutmobiletablecmd4line { get; set; }
+		public int layoutmobiletablecmd4column { get; set; }
+		public int layoutmobiletablecmd6line { get; set; }
+		public int layoutmobiletablecmd6column { get; set; }
+		public int layoutmobiletablecmd8line { get; set; }
+		public int layoutmobiletablecmd8column { get; set; }
+		public int layoutmobiletablecmd10line { get; set; }
+		public int layoutmobiletablecmd10column { get; set; }
+		public int layoutmobiletablecmd12line { get; set; }
+		public int layoutmobiletablecmd12column { get; set; }
+		public int layoutmobiletablecmd14line { get; set; }
+		public int layoutmobiletablecmd14column { get; set; }
+		public int layoutmobiletablecmd1line { get; set; }
+		public int layoutmobiletablecmd1column { get; set; }
+		public int layoutmobiletablecmd3line { get; set; }
+		public int layoutmobiletablecmd3column { get; set; }
+		public int layoutmobiletablecmd5line { get; set; }
+		public int layoutmobiletablecmd5column { get; set; }
+		public int layoutmobiletablecmd7line { get; set; }
+		public int layoutmobiletablecmd7column { get; set; }
+		public int layoutmobiletablecmd9line { get; set; }
+		public int layoutmobiletablecmd9column { get; set; }
+		public int layoutmobiletablecmd11line { get; set; }
+		public int layoutmobiletablecmd11column { get; set; }
+		public int layoutdashboardtablecmd27line { get; set; }
+		public int layoutdashboardtablecmd27column { get; set; }
+		public int layoutdashboardtablecmd16line { get; set; }
+		public int layoutdashboardtablecmd16column { get; set; }
+		public int layoutdashboardtablecmd18line { get; set; }
+		public int layoutdashboardtablecmd18column { get; set; }
+		public int layoutdashboardtablecmd20line { get; set; }
+		public int layoutdashboardtablecmd20column { get; set; }
+		public int layoutdashboardtablecmd22line { get; set; }
+		public int layoutdashboardtablecmd22column { get; set; }
+		public int layoutdashboardtablecmd24line { get; set; }
+		public int layoutdashboardtablecmd24column { get; set; }
+		public int layoutdashboardtablecmd26line { get; set; }
+		public int layoutdashboardtablecmd26column { get; set; }
+		public int layoutdashboardtablecmd28line { get; set; }
+		public int layoutdashboardtablecmd28column { get; set; }
+		public int layoutdashboardtablecmd15line { get; set; }
+		public int layoutdashboardtablecmd15column { get; set; }
+		public int layoutdashboardtablecmd17line { get; set; }
+		public int layoutdashboardtablecmd17column { get; set; }
+		public int layoutdashboardtablecmd19line { get; set; }
+		public int layoutdashboardtablecmd19column { get; set; }
+		public int layoutdashboardtablecmd21line { get; set; }
+		public int layoutdashboardtablecmd21column { get; set; }
+		public int layoutdashboardtablecmd23line { get; set; }
+		public int layoutdashboardtablecmd23column { get; set; }
+		public int layoutdashboardtablecmd25line { get; set; }
+		public int layoutdashboardtablecmd25column { get; set; }
+		public int layoutmobiletablecmd27line { get; set; }
+		public int layoutmobiletablecmd27column { get; set; }
+		public int layoutmobiletablecmd16line { get; set; }
+		public int layoutmobiletablecmd16column { get; set; }
+		public int layoutmobiletablecmd18line { get; set; }
+		public int layoutmobiletablecmd18column { get; set; }
+		public int layoutmobiletablecmd20line { get; set; }
+		public int layoutmobiletablecmd20column { get; set; }
+		public int layoutmobiletablecmd22line { get; set; }
+		public int layoutmobiletablecmd22column { get; set; }
+		public int layoutmobiletablecmd24line { get; set; }
+		public int layoutmobiletablecmd24column { get; set; }
+		public int layoutmobiletablecmd26line { get; set; }
+		public int layoutmobiletablecmd26column { get; set; }
+		public int layoutmobiletablecmd28line { get; set; }
+		public int layoutmobiletablecmd28column { get; set; }
+		public int layoutmobiletablecmd15line { get; set; }
+		public int layoutmobiletablecmd15column { get; set; }
+		public int layoutmobiletablecmd17line { get; set; }
+		public int layoutmobiletablecmd17column { get; set; }
+		public int layoutmobiletablecmd19line { get; set; }
+		public int layoutmobiletablecmd19column { get; set; }
+		public int layoutmobiletablecmd21line { get; set; }
+		public int layoutmobiletablecmd21column { get; set; }
+		public int layoutmobiletablecmd23line { get; set; }
+		public int layoutmobiletablecmd23column { get; set; }
+		public int layoutmobiletablecmd25line { get; set; }
+		public int layoutmobiletablecmd25column { get; set; }
+		public int layoutdashboardtablecmd41line { get; set; }
+		public int layoutdashboardtablecmd41column { get; set; }
+		public int layoutdashboardtablecmd30line { get; set; }
+		public int layoutdashboardtablecmd30column { get; set; }
+		public int layoutdashboardtablecmd32line { get; set; }
+		public int layoutdashboardtablecmd32column { get; set; }
+		public int layoutdashboardtablecmd34line { get; set; }
+		public int layoutdashboardtablecmd34column { get; set; }
+		public int layoutdashboardtablecmd36line { get; set; }
+		public int layoutdashboardtablecmd36column { get; set; }
+		public int layoutdashboardtablecmd38line { get; set; }
+		public int layoutdashboardtablecmd38column { get; set; }
+		public int layoutdashboardtablecmd40line { get; set; }
+		public int layoutdashboardtablecmd40column { get; set; }
+		public int layoutdashboardtablecmd42line { get; set; }
+		public int layoutdashboardtablecmd42column { get; set; }
+		public int layoutdashboardtablecmd29line { get; set; }
+		public int layoutdashboardtablecmd29column { get; set; }
+		public int layoutdashboardtablecmd31line { get; set; }
+		public int layoutdashboardtablecmd31column { get; set; }
+		public int layoutdashboardtablecmd33line { get; set; }
+		public int layoutdashboardtablecmd33column { get; set; }
+		public int layoutdashboardtablecmd35line { get; set; }
+		public int layoutdashboardtablecmd35column { get; set; }
+		public int layoutdashboardtablecmd37line { get; set; }
+		public int layoutdashboardtablecmd37column { get; set; }
+		public int layoutdashboardtablecmd39line { get; set; }
+		public int layoutdashboardtablecmd39column { get; set; }
+		public int layoutmobiletablecmd41line { get; set; }
+		public int layoutmobiletablecmd41column { get; set; }
+		public int layoutmobiletablecmd30line { get; set; }
+		public int layoutmobiletablecmd30column { get; set; }
+		public int layoutmobiletablecmd32line { get; set; }
+		public int layoutmobiletablecmd32column { get; set; }
+		public int layoutmobiletablecmd34line { get; set; }
+		public int layoutmobiletablecmd34column { get; set; }
+		public int layoutmobiletablecmd36line { get; set; }
+		public int layoutmobiletablecmd36column { get; set; }
+		public int layoutmobiletablecmd38line { get; set; }
+		public int layoutmobiletablecmd38column { get; set; }
+		public int layoutmobiletablecmd40line { get; set; }
+		public int layoutmobiletablecmd40column { get; set; }
+		public int layoutmobiletablecmd42line { get; set; }
+		public int layoutmobiletablecmd42column { get; set; }
+		public int layoutmobiletablecmd29line { get; set; }
+		public int layoutmobiletablecmd29column { get; set; }
+		public int layoutmobiletablecmd31line { get; set; }
+		public int layoutmobiletablecmd31column { get; set; }
+		public int layoutmobiletablecmd33line { get; set; }
+		public int layoutmobiletablecmd33column { get; set; }
+		public int layoutmobiletablecmd35line { get; set; }
+		public int layoutmobiletablecmd35column { get; set; }
+		public int layoutmobiletablecmd37line { get; set; }
+		public int layoutmobiletablecmd37column { get; set; }
+		public int layoutmobiletablecmd39line { get; set; }
+		public int layoutmobiletablecmd39column { get; set; }
+	}
 
-        [DataMember(Name = "JeedomAppRowSpan")]
-        public int JeedomAppRowSpan { get; set; }
-
-        [DataMember(Name = "JeedomAppColSpan")]
-        public int JeedomAppColSpan { get; set; }
-    }
-
-    [DataContract]
-    public class EqLogicDisplay
-    {
-        /* [DataMember(Name = "hideOndashboard")]
-         private bool _hideOndashboard=false;
-         public bool hideOndashboard {
-             get
-             {
-                 return _hideOndashboard;
-             }
-             set
-             {
-                 if(value!=null)
-                     _hideOndashboard=Convert.ToBoolean(value);
-             }
-         }
-
-         [DataMember(Name = "hideOnmobile")]
-         private bool _hideOnmobile = false;
-         public bool hideOnmobile
-         {
-             get
-             {
-                 return _hideOnmobile;
-             }
-             set
-             {
-                 if (value != null)
-                     _hideOnmobile = Convert.ToBoolean(value);
-             }
-         }
-
-         [DataMember(Name = "doNotShowNameOnDashboard")]
-         private bool _doNotShowNameOnDashboard = false;
-         public bool doNotShowNameOnDashboard
-         {
-             get
-             {
-                 return _doNotShowNameOnDashboard;
-             }
-             set
-             {
-                 if(value!=null)
-                 _doNotShowNameOnDashboard = Convert.ToBoolean(value);
-             }
-         }
-
-         [DataMember(Name = "doNotShowNameOnView")]
-         private bool _doNotShowNameOnView = false;
-         public bool doNotShowNameOnView
-         {
-             get
-             {
-                     return _doNotShowNameOnView;
-             }
-             set
-             {
-                 if (value != null)
-                 _doNotShowNameOnView = Convert.ToBoolean(value);
-             }
-         }
-
-         [DataMember(Name = "doNotShowNameOnMobile")]
-         private bool _doNotShowNameOnMobile = false;
-         public bool doNotShowNameOnMobile
-         {
-             get
-             {
-                 return _doNotShowNameOnMobile;
-             }
-             set
-             {
-                 if (value != null)
-                     _doNotShowNameOnMobile = Convert.ToBoolean(value);
-             }
-         }
-
-         [DataMember(Name = "doNotShowObjectNameOnView")]
-         private bool _doNotShowObjectNameOnView = false;
-         public bool doNotShowObjectNameOnView
-         {
-             get
-             {
-                 return _doNotShowObjectNameOnView;
-             }
-             set
-             {
-                 if (value != null)
-                     _doNotShowObjectNameOnView = Convert.ToBoolean(value);
-             }
-         }
-
-         [DataMember(Name = "doNotDisplayBatteryLevelOnDashboard")]
-         private bool _doNotDisplayBatteryLevelOnDashboard = false;
-         public bool doNotDisplayBatteryLevelOnDashboard
-         {
-             get
-             {
-                 return _doNotDisplayBatteryLevelOnDashboard;
-             }
-             set
-             {
-                 if (value != null)
-                     _doNotDisplayBatteryLevelOnDashboard = Convert.ToBoolean(value);
-             }
-         }
-
-         [DataMember(Name = "doNotDisplayBatteryLevelOnView")]
-         private bool _doNotDisplayBatteryLevelOnView = false;
-         public bool doNotDisplayBatteryLevelOnView
-         {
-             get
-             {
-                 return _doNotDisplayBatteryLevelOnView;
-             }
-             set
-             {
-                 if (value != null)
-                     _doNotDisplayBatteryLevelOnView = Convert.ToBoolean(value);
-             }
-         }
-
-         [DataMember(Name = "parameters")]
-         public CustomParameters customParameters { get; set; }*/
-        [DataMember(Name = "width")]
-        public string width { get; set; }
-        [DataMember(Name = "height")]
-        public string height { get; set; }
-    }
 }

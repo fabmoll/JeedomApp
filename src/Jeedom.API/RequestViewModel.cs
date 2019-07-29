@@ -494,7 +494,7 @@ namespace Jeedom.API
 					{
 						case "cmd::update":
 							var ev = e as Event<EventOptionCmd>;
-							var cmd = (from c in CommandList where c.Id == ev.Option.CmdId select c).FirstOrDefault();
+							var cmd = (from c in CommandList where c.id == ev.Option.CmdId select c).FirstOrDefault();
 							if (cmd != null)
 							{
 								if (cmd.DateTime < ev.DateTime)
@@ -507,7 +507,7 @@ namespace Jeedom.API
 
 						case "eqLogic::update":
 							var eveq = e as Event<EventOptionEqLogic>;
-							var eq = (from c in EqLogicList where c.id == eveq.Option.EqLogicId select c).FirstOrDefault();
+							var eq = (from c in EqLogicList where c.Id == eveq.Option.EqLogicId select c).FirstOrDefault();
 
 							if (eq != null)
 							{
@@ -647,7 +647,7 @@ namespace Jeedom.API
 				var idx = id.Substring(3);
 				if (id.StartsWith("eq_"))
 				{
-					var lst = from e in EqLogicList where e.id == idx select e;
+					var lst = from e in EqLogicList where e.Id == idx select e;
 					if (lst.Count() != 0)
 					{
 						var eq = lst.First();
@@ -791,10 +791,10 @@ namespace Jeedom.API
 			if (await jsonrpc.SendRequest("sync"))
 			{
 				// Récupère la liste de tous les eqLogics
-				var EqLogics = jsonrpc.GetRequestResponseDeserialized<Response<JdObject>>();
+				var EqLogics = jsonrpc.GetRequestResponseDeserialized<Response<JeedomObject>>();
 				if (EqLogics != null)
 				{
-					foreach (Model.EqLogic eq in EqLogics.result.EqLogics)
+					foreach (Model.EqLogic eq in EqLogics.result.eqLogics)
 					{
 						EqLogicList.Add(eq);
 					}
@@ -831,7 +831,7 @@ namespace Jeedom.API
 				// Affecte les eqLogics à leurs objects correspondants
 				foreach (EqLogic eq in EqLogicList)
 				{
-					var ob = (from o in ObjectList where o.id == eq.ObjectId select o).FirstOrDefault();
+					var ob = (from o in ObjectList where o.id == eq.object_id select o).FirstOrDefault();
 
 					if (ob.eqLogics == null)
 						ob.eqLogics = new List<EqLogic>();
@@ -856,10 +856,10 @@ namespace Jeedom.API
 
 		public async Task UpdateEqLogic(EqLogic eq)
 		{
-			if (eq.cmds == null)
+			if (eq.Cmds == null)
 				return;
 
-			var infoCmds = (from cmd in eq.cmds where cmd.type == "info" select cmd).DefaultIfEmpty();
+			var infoCmds = (from cmd in eq.Cmds where cmd.type == "info" select cmd).DefaultIfEmpty();
 			if (infoCmds.Count() > 0)
 			{
 				foreach (Command cmd in infoCmds)

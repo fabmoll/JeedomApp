@@ -63,10 +63,5 @@ namespace Jeedom.API.Mvvm
         {
             base.OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
-
-		public static implicit operator List<T>(ObservableCollectionEx<EqLogic> v)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }
