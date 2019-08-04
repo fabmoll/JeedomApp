@@ -187,9 +187,9 @@ namespace Jeedom.API.Model
 				{
 					try
 					{
-						var cmd = Cmds.Where(c => c.Display.generic_type == parameters.ToString()).FirstOrDefault();
-						if (cmd != null)
-							await ExecCommand(cmd);
+						//var cmd = Cmds.Where(c => c.Display.First().generic_type == parameters.ToString()).FirstOrDefault();
+						//if (cmd != null)
+						//	await ExecCommand(cmd);
 					}
 					catch (Exception) { }
 				});

@@ -2,6 +2,7 @@
 using Jeedom.API.Mvvm;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace Jeedom.API.Model
 		public string unite { get; set; }
 		public object configuration { get; set; }
 		public object template { get; set; }
-		public CommandDisplay display { get; set; }
+		public object display { get; set; }
 		public string value { get; set; }
 		[JsonConverter(typeof(BooleanJsonConverter))]
 		public bool isVisible { get; set; }
@@ -40,7 +41,7 @@ namespace Jeedom.API.Model
 
 		#region Public Properties
 
-		public CommandDisplay Display { get { if (display == null) return new CommandDisplay(); else return display; } set { display = value; } }
+		public object Display { get { if (display == null) return new object(); else return display; } set { display = value; } }
 
 		public string EqLogic_id { get { return eqLogic_id; } set { eqLogic_id = value; } }
 

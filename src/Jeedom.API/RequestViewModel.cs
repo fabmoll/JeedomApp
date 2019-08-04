@@ -368,8 +368,8 @@ namespace Jeedom.API
 
 			if (await jsonrpc.SendRequest("object::full"))
 			{
-				var response = jsonrpc.GetRequestResponseDeserialized<Response<RootJeedomObjects>>();
-				foreach (JeedomObject obj in response.result.result)
+				var response = jsonrpc.GetRequestResponseDeserialized<RootJeedomObjects>();
+				foreach (JeedomObject obj in response.result)
 				{
 					var lst = from o in ObjectList where o.id == obj.id select o;
 					if (lst.Count() != 0)
